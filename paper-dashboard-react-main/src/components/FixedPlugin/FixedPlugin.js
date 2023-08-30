@@ -53,7 +53,7 @@ function FixedPlugin(props) {
             <div className="badge-colors text-center">
               <span
                 className={
-                  props.bgColor === "black"
+                  props.bgState.bgColor === "black"
                     ? "badge filter badge-dark active"
                     : "badge filter badge-dark"
                 }
@@ -64,7 +64,7 @@ function FixedPlugin(props) {
               />
               <span
                 className={
-                  props.bgColor === "white"
+                  props.bgState.bgColor === "white"
                     ? "badge filter badge-light active"
                     : "badge filter badge-light"
                 }
@@ -80,7 +80,7 @@ function FixedPlugin(props) {
             <div className="badge-colors text-center">
               <span
                 className={
-                  props.activeColor === "primary"
+                  props.activeState.activeColor === "primary"
                     ? "badge filter badge-primary active"
                     : "badge filter badge-primary"
                 }
@@ -91,7 +91,7 @@ function FixedPlugin(props) {
               />
               <span
                 className={
-                  props.activeColor === "info"
+                  props.activeState.activeColor === "info"
                     ? "badge filter badge-info active"
                     : "badge filter badge-info"
                 }
@@ -102,7 +102,7 @@ function FixedPlugin(props) {
               />
               <span
                 className={
-                  props.activeColor === "success"
+                  props.activeState.activeColor === "success"
                     ? "badge filter badge-success active"
                     : "badge filter badge-success"
                 }
@@ -113,7 +113,7 @@ function FixedPlugin(props) {
               />
               <span
                 className={
-                  props.activeColor === "warning"
+                  props.activeState.activeColor === "warning"
                     ? "badge filter badge-warning active"
                     : "badge filter badge-warning"
                 }
@@ -124,7 +124,7 @@ function FixedPlugin(props) {
               />
               <span
                 className={
-                  props.activeColor === "danger"
+                  props.activeState.activeColor === "danger"
                     ? "badge filter badge-danger active"
                     : "badge filter badge-danger"
                 }
