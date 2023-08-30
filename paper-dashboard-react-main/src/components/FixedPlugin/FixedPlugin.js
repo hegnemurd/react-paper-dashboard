@@ -17,8 +17,20 @@
 
 */
 import React from "react";
+import { connect } from "react-redux";
+import setBgAction from "actions/setBgAction";
+import setColorAction from "actions/setColorAction";
 
 import { Button } from "reactstrap";
+
+const mapStateToProps = (state) => ({
+  ...state,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setBgAction: (payload) => dispatch(setBgAction(payload)),
+  setColorAction: (payload) => dispatch(setColorAction(payload)),
+});
 
 function FixedPlugin(props) {
   const [classes, setClasses] = React.useState("dropdown show");
@@ -47,7 +59,7 @@ function FixedPlugin(props) {
                 }
                 data-color="black"
                 onClick={() => {
-                  props.handleBgClick("black");
+                  props.setBgAction("black");
                 }}
               />
               <span
@@ -58,7 +70,7 @@ function FixedPlugin(props) {
                 }
                 data-color="white"
                 onClick={() => {
-                  props.handleBgClick("white");
+                  props.setBgAction("white");
                 }}
               />
             </div>
@@ -74,7 +86,7 @@ function FixedPlugin(props) {
                 }
                 data-color="primary"
                 onClick={() => {
-                  props.handleActiveClick("primary");
+                  props.setColorAction("primary");
                 }}
               />
               <span
@@ -85,7 +97,7 @@ function FixedPlugin(props) {
                 }
                 data-color="info"
                 onClick={() => {
-                  props.handleActiveClick("info");
+                  props.setColorAction("info");
                 }}
               />
               <span
@@ -96,7 +108,7 @@ function FixedPlugin(props) {
                 }
                 data-color="success"
                 onClick={() => {
-                  props.handleActiveClick("success");
+                  props.setColorAction("success");
                 }}
               />
               <span
@@ -107,7 +119,7 @@ function FixedPlugin(props) {
                 }
                 data-color="warning"
                 onClick={() => {
-                  props.handleActiveClick("warning");
+                  props.setColorAction("warning");
                 }}
               />
               <span
@@ -118,7 +130,7 @@ function FixedPlugin(props) {
                 }
                 data-color="danger"
                 onClick={() => {
-                  props.handleActiveClick("danger");
+                  props.setColorAction("danger");
                 }}
               />
             </div>
@@ -162,4 +174,4 @@ function FixedPlugin(props) {
   );
 }
 
-export default FixedPlugin;
+export default connect(mapStateToProps, mapDispatchToProps)(FixedPlugin);
